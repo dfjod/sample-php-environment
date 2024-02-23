@@ -1,0 +1,8 @@
+FROM composer:2
+
+ARG DOCKER_UID
+ARG DOCKER_GID
+
+RUN adduser -g ${DOCKER_GID} -s /bin/sh -D ${DOCKER_UID}
+
+USER ${DOCKER_UID}:${DOCKER_GID}
